@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 cd /workspace
 
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-commo curl
@@ -21,4 +22,4 @@ sudo apt update
 
 sudo apt-get install terraform -y
 
-cd /workspace/terraform-beginner-bootcamp-2023
+cd $PROJECT_ROOT
