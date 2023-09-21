@@ -101,7 +101,7 @@ We can list out all Environment Variables (Env Vars) using the `env` command
 
 We can filiter specific env vars using grep eg. `env | grep AWS_`
 
-#### SEtting and Unsetting Env Vars
+#### Setting and Unsetting Env Vars
 
 In the terminal we can set using `export HELLO='world'`
 
@@ -145,3 +145,29 @@ gp env Hello=`world`
 All future workspaces lauched will set the env vars for all bash terminals opened in those workspaces.
 
 You can also set the en vars in the `.gitpod.yml`, but this can only contain non-sensitive en vars.
+
+
+### AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli.sh)
+
+[Getting Started Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+[AWS CLi Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+We can check if our AWS credentials is configured correctly  by running the following AWS Cli command:
+
+```
+aws sts get-caller-identity
+```
+
+if it is successfuly, you should see a json payload return taht look like it
+
+```json
+
+{
+    "UserId": "BNMQETJFDD67ZN7DG65KR",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/testingaccount"
+}
+```
+
+We will need to generate AWS CLI credits from IAM User in order to use the AWS CLI
