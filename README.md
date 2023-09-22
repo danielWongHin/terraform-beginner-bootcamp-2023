@@ -244,3 +244,28 @@ If you lose this file, you lose knowning the state of your infrastructure.
 We have to follow the naming policy for creating the S3 bucket name
 
 [S3 bucket naming policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
+
+
+### Terraform CLoud login
+
+When attempting to run `terraform login`, press `p` to open the link to generate teh token and paste it after quit. 
+
+Or you can manually generate a token in Terraform Cloud and create the file by pasting the token:
+
+```sh
+touch /home/gitpod/.terraform.d/credential.tfrc.json
+open /home/gitpod/.terraform.d/credential.tfrc.json
+```
+
+Provide the following code (replace your token in the file)
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR_TERRAFORM_TOKEN_CODE"
+    }
+  }
+}
+
+```
