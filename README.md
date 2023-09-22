@@ -236,3 +236,11 @@ If you lose this file, you lose knowning the state of your infrastructure.
 ### Terraform Directory
 
 `.terraform` directory contains binaries of terraform providers.
+
+
+
+### S3 Bucket naming policy
+
+We have to follow the naming policy for creating the S3 bucket name
+
+[S3 bucket naming policy](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html)
