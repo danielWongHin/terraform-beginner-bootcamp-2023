@@ -271,3 +271,5 @@ Provided the following code (replace your token in the file)
 ```
 
 We have automate this workaround with the following bash script [/bin/generate_tfrc_credential.sh](bin/generate_tfrc_credential.sh)
+
+We have set the terraform alias to tf with the following script [/bin/set_tf_alias.sh](bin/set_tf_alias.sh)
