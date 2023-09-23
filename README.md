@@ -257,7 +257,7 @@ touch /home/gitpod/.terraform.d/credential.tfrc.json
 open /home/gitpod/.terraform.d/credential.tfrc.json
 ```
 
-Provide the following code (replace your token in the file)
+Provided the following code (replace your token in the file)
 
 ```json
 {
