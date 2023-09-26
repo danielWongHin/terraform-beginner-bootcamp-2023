@@ -1,5 +1,11 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of content
+
+- [Sematic Versioning](#semantic-versioning)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+- [Considerations with the Terraform cli changes](#considerations-with-the-terraform-cli-changes)
+
 ## Semantic Versioning
 
 This project is going to utilize semantic versioning for its taging [semver.org](https://semver.org/)
@@ -273,3 +279,6 @@ Provided the following code (replace your token in the file)
 We have automate this workaround with the following bash script [/bin/generate_tfrc_credential.sh](bin/generate_tfrc_credential.sh)
 
 We have set the terraform alias to tf with the following script [/bin/set_tf_alias.sh](bin/set_tf_alias.sh)
+
+
+https://developer.hashicorp.com/terraform/language/modules/develop/structure
