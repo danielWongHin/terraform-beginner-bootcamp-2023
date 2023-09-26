@@ -1,38 +1,38 @@
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 # Terraform Beginner Bootcamp 2023 - Week 0
-- [Terraform Beginner Bootcamp 2023](#terraform-beginner-bootcamp-2023)
-   * [Semantic Versioning](#semantic-versioning)
-   * [Install the Terraform cli](#install-the-terraform-cli)
-      + [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
-      + [Consideration for Linux Distribution](#consideration-for-linux-distribution)
-      + [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-      + [Shebang Consideration](#shebang-consideration)
-         - [Execution Consideration](#execution-consideration)
-      + [Linux Permission Consideration](#linux-permission-consideration)
-      + [Github Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
-      + [Working Env Vars](#working-env-vars)
-         - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+- [Semantic Versioning](#semantic-versioning)
+- [Install the Terraform cli](#install-the-terraform-cli)
+   * [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+   * [Consideration for Linux Distribution](#consideration-for-linux-distribution)
+   * [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+   * [Shebang Consideration](#shebang-consideration)
+      + [Execution Consideration](#execution-consideration)
+   * [Linux Permission Consideration](#linux-permission-consideration)
+- [Gitpod Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
+- [Working Env Vars](#working-env-vars)
+   * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
    * [Printing Vars](#printing-vars)
-         - [Scoping of Env vars](#scoping-of-env-vars)
-         - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
-      + [AWS CLI is installed for the project via the bash script `./bin/install_aws_cli`](#aws-cli-is-installed-for-the-project-via-the-bash-script-bininstall_aws_cli)
-   * [Terraform Basics](#terraform-basics)
-      + [Terraform Registry](#terraform-registry)
-      + [Terraform Console](#terraform-console)
-         - [Terraform init](#terraform-init)
-         - [Terraform Plan](#terraform-plan)
-         - [Terraform Apply](#terraform-apply)
-         - [Terrafrom Destroy](#terrafrom-destroy)
-      + [Terraform Lock files](#terraform-lock-files)
-      + [Terraform State Files](#terraform-state-files)
-      + [Terraform Directory](#terraform-directory)
-      + [S3 Bucket naming policy](#s3-bucket-naming-policy)
-      + [Terraform CLoud login](#terraform-cloud-login)
+   * [Scoping of Env vars](#scoping-of-env-vars)
+   * [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI is installed for the project via the bash script `./bin/install_aws_cli`](#aws-cli-is-installed-for-the-project-via-the-bash-script-bininstall_aws_cli)
+- [Terraform Basics](#terraform-basics)
+   * [Terraform Registry](#terraform-registry)
+   * [Terraform Console](#terraform-console)
+      + [Terraform init](#terraform-init)
+      + [Terraform Plan](#terraform-plan)
+      + [Terraform Apply](#terraform-apply)
+      + [Terrafrom Destroy](#terrafrom-destroy)
+   * [Terraform Lock files](#terraform-lock-files)
+   * [Terraform State Files](#terraform-state-files)
+   * [Terraform Directory](#terraform-directory)
+   * [S3 Bucket naming policy](#s3-bucket-naming-policy)
+   * [Terraform CLoud login](#terraform-cloud-login)
+
 
 <!-- TOC end -->
 
 <!-- TOC --><a name="terraform-beginner-bootcamp-2023"></a>
-# Terraform Beginner Bootcamp 2023
+
 
 
 <!-- TOC --><a name="semantic-versioning"></a>
@@ -133,21 +133,21 @@ chmod u+x ./bin/install_terraform_cli
 https://en.wikipedia.org/wiki/Chmod
 
 <!-- TOC --><a name="github-lifecycle-before-init-command"></a>
-### Github Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle (Before, Init, Command)
 
 We need to be careful when using the `Init` because it will not rerun if we restart an exisiting workspace, maybe we will need to use `before`
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
 <!-- TOC --><a name="working-env-vars"></a>
-### Working Env Vars
+## Working Env Vars
 
 We can list out all Environment Variables (Env Vars) using the `env` command
 
 We can filiter specific env vars using grep eg. `env | grep AWS_`
 
 <!-- TOC --><a name="setting-and-unsetting-env-vars"></a>
-#### Setting and Unsetting Env Vars
+### Setting and Unsetting Env Vars
 
 In the terminal we can set using `export HELLO='world'`
 
@@ -170,20 +170,20 @@ echo $HELLO
 ```
 
 <!-- TOC --><a name="printing-vars"></a>
-## Printing Vars
+### Printing Vars
 
 We can print an env var using using echo eg. `echo $HELLO`
 
 
 <!-- TOC --><a name="scoping-of-env-vars"></a>
-#### Scoping of Env vars
+### Scoping of Env vars
 
 When you open up a new bash terminals in VSCode it will not be aware of env vars that you have set in another window.
 
 If you want the Env Vars to persist across all future bash terminals that are opened. You need to set the env vars in your bash profile, eg. `.bash_profile`
 
 <!-- TOC --><a name="persisting-env-vars-in-gitpod"></a>
-#### Persisting Env Vars in Gitpod
+### Persisting Env Vars in Gitpod
 
 We can persist env vars into gitpod by storing them in Gitpod Secrets Storage.
 
@@ -197,7 +197,7 @@ You can also set the en vars in the `.gitpod.yml`, but this can only contain non
 
 
 <!-- TOC --><a name="aws-cli-is-installed-for-the-project-via-the-bash-script-bininstall_aws_cli"></a>
-### AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli.sh)
+## AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli.sh)
 
 [Getting Started Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
