@@ -1,13 +1,13 @@
-# terraform {
-#   cloud {
-#     organization = "daniel-terraform"
+terraform {
+  cloud {
+    organization = "daniel-terraform"
 
-#     workspaces {
-#       name = "terra-house-1"
-#     }
-#   }
+    workspaces {
+      name = "terraform-cloud"
+    }
+  }
 
-# }
+}
 
 module "terrahouse_aws" {
   source              = "./modules/terrahouse_aws"
