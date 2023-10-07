@@ -4,12 +4,14 @@ package main
 
 // fmt is short format, it contains functions for formatted I/O.
 import (
+
 	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
+
 
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
@@ -34,12 +36,20 @@ type Config struct {
 	UserUuid string
 }
 
+type Config struct {
+	Endpoint string
+	Token string
+	UserUuid string
+}
+
 // in golang, a titlecase function will get exported.
 func Provider() *schema.Provider {
 	var p *schema.Provider
 	p = &schema.Provider{
+
 		ResourcesMap: map[string]*schema.Resource{
 			"terratowns_home": Resource(),
+
 		},
 		DataSourcesMap: map[string]*schema.Resource{},
 		Schema: map[string]*schema.Schema{
@@ -55,13 +65,16 @@ func Provider() *schema.Provider {
 				Description: "Bearer token for authorization",
 			},
 			"user_uuid": {
+
 				Type:         schema.TypeString,
 				Required:     true,
 				Description:  "UUID for configuration",
+
 				ValidateFunc: validateUUID,
 			},
 		},
 	}
+
 	p.ConfigureContextFunc = providerConfigure(p)
 	return p
 }
@@ -69,7 +82,9 @@ func Provider() *schema.Provider {
 func validateUUID(v interface{}, k string) (ws []string, errors []error) {
 	log.Print("validateUUID:start")
 	value := v.(string)
+
 	if _, err := uuid.Parse(value); err != nil {
+
 		errors = append(errors, fmt.Errorf("invalid UUID format"))
 	}
 	log.Print("validateUUID:end")
@@ -77,11 +92,13 @@ func validateUUID(v interface{}, k string) (ws []string, errors []error) {
 }
 
 func providerConfigure(p *schema.Provider) schema.ConfigureContextFunc {
+
 	return func(ctx context.Context, d *schema.ResourceData) (interface{}, diag.Diagnostics) {
 		log.Print("providerConfigure:start")
 		config := Config{
 			Endpoint: d.Get("endpoint").(string),
 			Token:    d.Get("token").(string),
+
 			UserUuid: d.Get("user_uuid").(string),
 		}
 		log.Print("providerConfigure:end")
@@ -123,12 +140,14 @@ func Resource() *schema.Resource {
 				Description: "The content version of the home",
 			},
 		},
+
 	}
 	log.Print("Resource:start")
 	return resource
 }
 
 func resourceHouseCreate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+
 	log.Print("resourceHouseCreate:start")
 	var diags diag.Diagnostics
 
@@ -184,10 +203,12 @@ func resourceHouseCreate(ctx context.Context, d *schema.ResourceData, m interfac
 
 	log.Print("resourceHouseCreate:end")
 
+
 	return diags
 }
 
 func resourceHouseRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+
 	log.Print("resourceHouseRead:start")
 	var diags diag.Diagnostics
 
@@ -234,10 +255,12 @@ func resourceHouseRead(ctx context.Context, d *schema.ResourceData, m interface{
 
 	log.Print("resourceHouseRead:end")
 
+
 	return diags
 }
 
 func resourceHouseUpdate(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+
 	log.Print("resourceHouseUpdate:start")
 	var diags diag.Diagnostics
 
@@ -285,10 +308,12 @@ func resourceHouseUpdate(ctx context.Context, d *schema.ResourceData, m interfac
 	d.Set("name", payload["name"])
 	d.Set("description", payload["description"])
 	d.Set("content_version", payload["content_version"])
+
 	return diags
 }
 
 func resourceHouseDelete(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
+
 	log.Print("resourceHouseDelete:start")
 	var diags diag.Diagnostics
 
@@ -326,3 +351,4 @@ func resourceHouseDelete(ctx context.Context, d *schema.ResourceData, m interfac
 	log.Print("resourceHouseDelete:end")
 	return diags
 }
+
