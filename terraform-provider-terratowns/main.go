@@ -32,12 +32,6 @@ func main() {
 
 type Config struct {
 	Endpoint string
-	Token    string
-	UserUuid string
-}
-
-type Config struct {
-	Endpoint string
 	Token string
 	UserUuid string
 }
