@@ -45,6 +45,6 @@ Manchester United Football Club, commonly referred to as Man United, or simply U
 DESCRIPTION
   #domain_name = module.terrahouse_aws.cloudfront_url
   domain_name = "3fdq3gz.cloudfront.net"
-  town = "Fans-Manchester-United"
+  town = "gamers-grotto"
   content_version = 1
 }
