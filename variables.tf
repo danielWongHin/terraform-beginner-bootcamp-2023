@@ -1,9 +1,13 @@
-variable "user_uuid" {
+variable "teacherseat_user_uuid" {
   type = string
 }
-variable "bucket_name" {
+
+variable "terratowns_access_Token" {
   type = string
 }
+# variable "bucket_name" {
+#   type = string
+# }
 
 variable "index_html_filepath" {
   description = "The file path for index.html"
@@ -22,5 +26,9 @@ variable "content_version" {
 
 variable "assets_path" {
   description = "Path to assets folder"
+  type = string
+}
+
+variable "terratowns_endpoint" {
   type = string
 }
