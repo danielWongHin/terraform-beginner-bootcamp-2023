@@ -29,7 +29,7 @@ provider "terratowns" {
 }
 
 module "terrahouse_aws" {
-  assets_path = var.assets_path
+ assets_path = var.assets_path
  source = "./modules/terrahouse_aws"
  user_uuid = var.teacherseat_user_uuid
  index_html_filepath = var.index_html_filepath
