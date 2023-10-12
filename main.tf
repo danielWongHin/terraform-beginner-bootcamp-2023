@@ -42,7 +42,7 @@ resource "terratowns_home" "home_arcane" {
 Arcane (titled onscreen as Arcane: League of Legends) is an animated steampunk action-adventure television series created by Christian Linke and Alex Yee. It was produced by the French animation studio Fortiche under the supervision of Riot Games, and distributed by Netflix. 
 DESCRIPTION
   domain_name = module.home_arcane_hosting.domain_name
-  town = "missingo"
+  town = "video-valley"
   content_version = var.arcane.content_version
 }
 
@@ -60,6 +60,6 @@ resource "terratowns_home" "home_manu" {
 Manchester United Football Club, commonly referred to as Man United, or simply United, is a professional football club based in Old Trafford, Greater Manchester, England. The club competes in the Premier League, the top division in the English football league system. 
 DESCRIPTION
   domain_name = module.home_manu_hosting.domain_name
-  town = "missingo"
+  town = "the-nomad-pad"
   content_version = var.manu.content_version
 }
